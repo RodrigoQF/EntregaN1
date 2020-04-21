@@ -5,14 +5,14 @@ public class Computador {
     private String marca;
     private String processador;
     private int qnt_ram;
-    private int qnt_disco;
+    private int tamanho_disco;
 
-    public Computador(long id, String marca, String processador, int qnt_ram, int qnt_disco) {
+    public Computador(long id, String marca, String processador, int qnt_ram, int tamanho_disco) {
         this.setId(id);
         this.setMarca(marca);
         this.setProcessador(processador);
         this.setQnt_ram(qnt_ram);
-        this.setQnt_disco(qnt_disco);
+        this.setTamanho_disco(tamanho_disco);
     }
 
     public Computador() {
@@ -52,12 +52,12 @@ public class Computador {
 
 
 
-    public int getQnt_disco() {
-        return qnt_disco;
+    public int getTamanho_disco() {
+        return tamanho_disco;
     }
 
-    public void setQnt_disco(int qnt_disco) {
-        this.qnt_disco = qnt_disco;
+    public void setTamanho_disco(int tamanho_disco) {
+        this.tamanho_disco = tamanho_disco;
     }
     @Override
     public String toString() {
@@ -66,7 +66,7 @@ public class Computador {
                 ", marca='" + marca + '\'' +
                 ", processador='" + processador + '\'' +
                 ", qnt_ram=" + qnt_ram +
-                ", qnt_disco=" + qnt_disco +
+                ", tamanho_disco=" + tamanho_disco +
                 '}';
     }
 }

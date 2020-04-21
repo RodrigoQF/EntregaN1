@@ -1,10 +1,13 @@
 package org.example.persistencia;
 
+import org.example.entidades.Computador;
 import org.example.entidades.Pais;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PaisDAOMySQL implements PaisDAO {
@@ -42,8 +45,39 @@ public class PaisDAOMySQL implements PaisDAO {
 
     @Override
     public List<Pais> read() {
-        return null;
+        Connection conexao = mysql.getConnection();
+        List<Pais> planeta = new ArrayList();
+
+        try {
+            PreparedStatement pstm = conexao.prepareStatement(readSQL);
+            ResultSet rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                Pais pais = new Pais();
+                pais.setNome(rs.getString("nome"));
+                pais.setContinente(rs.getInt("continente"));
+                pais.setPopulacao(rs.getLong("populacao"));
+
+                planeta.add(pais);
+            }
+
+            return planeta ;
+
+        } catch (final SQLException ex) {
+            System.out.println("Falha de conexão com a base de dados!");
+            ex.printStackTrace();
+        } catch (final Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                conexao.close();
+            } catch (final Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return planeta;
     }
+  
 
     @Override
     public boolean update(Pais pais) {
