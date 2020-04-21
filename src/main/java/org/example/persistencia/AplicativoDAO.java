@@ -12,4 +12,4 @@ public interface AplicativoDAO {
         boolean update(Aplicativo aplicativo);
         boolean delete(Aplicativo aplicativo);
     }
-}
+

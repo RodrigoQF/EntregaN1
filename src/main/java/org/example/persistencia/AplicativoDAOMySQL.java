@@ -28,8 +28,8 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
             try {
                 PreparedStatement stm = conexao.prepareStatement(createSQL);
                 stm.setString(1,aplicativo.getNome());
-                stm.setString(2,aplicativo.getDesenvolvedor();
-                stm.setInt(3,aplicativo.getNrm_downloads();
+                stm.setString(2,aplicativo.getDesenvolvedor());
+                stm.setInt(3,aplicativo.getNrm_downloads());
                 int registro = stm.executeUpdate();
                 return (registro>0);
             } catch (SQLException e) {
@@ -93,4 +93,4 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
         }
     }
 
-}
+
