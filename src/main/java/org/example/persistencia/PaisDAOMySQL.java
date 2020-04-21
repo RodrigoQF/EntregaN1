@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class PaisDAOMySQL implements PaisDAO {
     private String createSQL="INSERT INTO pais (nome, continente, populacao) VALUES(?,?,?)";
@@ -19,7 +20,7 @@ public class PaisDAOMySQL implements PaisDAO {
     private final MySQLConnection mysql = new MySQLConnection();
 
 
-
+    //insert
     @Override
     public boolean create(Pais pais) {
         Connection conexao = mysql.getConnection();
@@ -29,7 +30,7 @@ public class PaisDAOMySQL implements PaisDAO {
             stm.setInt(2,pais.getContinente());
             stm.setLong(3,pais.getPopulacao());
             int registro = stm.executeUpdate();
-            return (registro>0);
+            return (registro > 0);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -43,6 +44,7 @@ public class PaisDAOMySQL implements PaisDAO {
         return false;
     }
 
+    //select
     @Override
     public List<Pais> read() {
         Connection conexao = mysql.getConnection();
@@ -60,7 +62,6 @@ public class PaisDAOMySQL implements PaisDAO {
 
                 planeta.add(pais);
             }
-
             return planeta ;
 
         } catch (final SQLException ex) {
@@ -77,15 +78,56 @@ public class PaisDAOMySQL implements PaisDAO {
         }
         return planeta;
     }
-  
 
     @Override
-    public boolean update(Pais pais) {
+    public boolean update (Pais pais) {
+        Connection conexao = mysql.getConnection();
+        try {
+            PreparedStatement stm = conexao.prepareStatement(updateSQL);
+            System.out.println("Insira o ID do país que deseja alterar:");
+            stm.setLong(1,pais.getId());
+            System.out.println("Altere o nome do país:");
+            stm.setString(2,pais.getNome());
+            System.out.println("Altere o continente do país:");
+            stm.setInt(3,pais.getContinente());
+            System.out.println("Altere a população do país:");
+            stm.setLong(4,pais.getPopulacao());
+            int registro = stm.executeUpdate();
+            return (registro > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                conexao.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return false;
     }
 
     @Override
     public boolean delete(Pais pais) {
+        Connection conexao = mysql.getConnection();
+        try {
+            PreparedStatement stm = conexao.prepareStatement(deleteSQL);
+            System.out.println("Insira o ID do país que deseja deletar:");
+            stm.setLong(1,pais.getId());
+            stm.execute();
+            int registro = stm.executeUpdate();
+            return (registro > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                conexao.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return false;
     }
+
 }

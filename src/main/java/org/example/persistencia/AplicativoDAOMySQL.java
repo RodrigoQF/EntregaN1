@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class AplicativoDAOMySQL implements AplicativoDAO{
 
@@ -21,7 +22,6 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
         private final MySQLConnection mysql = new MySQLConnection();
 
 
-
         @Override
         public boolean create(Aplicativo aplicativo) {
             Connection conexao = mysql.getConnection();
@@ -31,7 +31,7 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
                 stm.setString(2,aplicativo.getDesenvolvedor());
                 stm.setInt(3,aplicativo.getNrm_downloads());
                 int registro = stm.executeUpdate();
-                return (registro>0);
+                return (registro > 0);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -80,17 +80,57 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
             return store;
         }
 
-
-
-        @Override
-        public boolean update(Aplicativo aplicativo) {
-            return false;
+    @Override
+    public boolean update(Aplicativo aplicativo) {
+        Connection conexao = mysql.getConnection();
+        try {
+            PreparedStatement stm = conexao.prepareStatement(updateSQL);
+            System.out.println("Insira o ID do aplicativo que deseja alterar:");
+            stm.setLong(1,aplicativo.getId());
+            System.out.println("Altere o nome do aplicativo:");
+            stm.setString(2,aplicativo.getNome());
+            System.out.println("Altere o desenvolvedor do aplicativo:");
+            stm.setString(3,aplicativo.getDesenvolvedor());
+            System.out.println("Altere o número de downloads do aplicativo:");
+            stm.setInt(4,aplicativo.getNrm_downloads());
+            int registro = stm.executeUpdate();
+            return (registro > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
-        @Override
-        public boolean delete(Aplicativo aplicativo) {
-            return false;
+        finally {
+            try {
+                conexao.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+        return false;
+    }
+
+    @Override
+    public boolean delete(Aplicativo aplicativo) {
+        Connection conexao = mysql.getConnection();
+        try {
+            PreparedStatement stm = conexao.prepareStatement(deleteSQL);
+            System.out.println("Insira o ID do aplicativo que deseja deletar:");
+            stm.setLong(1,aplicativo.getId());
+            stm.execute();
+            int registro = stm.executeUpdate();
+            return (registro > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                conexao.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
     }
 
 

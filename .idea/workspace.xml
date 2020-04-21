@@ -4,10 +4,9 @@
     <list default="true" id="76e3afde-b7e7-41da-b6e7-92364da021f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/AplicativoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/AplicativoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/AplicativoDAOMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/AplicativoDAOMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/ComputadorDAOMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/ComputadorDAOMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/MySQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/MySQLConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/PaisDAOMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/PaisDAOMySQL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/org/example/entidades" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EntregaFrequencia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Entrega02_2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -81,6 +83,7 @@
       <updated>1587035051268</updated>
       <workItem from="1587035055983" duration="3127000" />
       <workItem from="1587486658876" duration="308000" />
+      <workItem from="1587488951231" duration="5180000" />
     </task>
     <servers />
   </component>
@@ -92,10 +95,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="677" y="178" key="#App/0.0.1920.1040@0.0.1920.1040" timestamp="1587486774343" />
+    <state x="291" y="0" key="#Project_Structure" timestamp="1587489454188">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="291" y="0" key="#Project_Structure/0.0.1600.852@0.0.1600.852" timestamp="1587489454188" />
     <state x="730" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1587037086130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="730" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587037086130" />
+    <state x="612" y="303" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587489303447">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="612" y="303" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1600.852@0.0.1600.852" timestamp="1587489303447" />
     <state x="660" y="171" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1587036170130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -104,9 +115,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="756" y="379" width="408" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1587035831611" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587486911024">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="617" y="225" key="FileChooserDialogImpl" timestamp="1587489159361">
+      <screen x="0" y="0" width="1600" height="852" />
     </state>
+    <state x="617" y="225" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1587489159361" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587486911024" />
     <state width="1877" height="75" key="GridCell.Tab.0.bottom" timestamp="1587038185892">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -132,6 +144,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587481216234" />
+    <state x="478" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1587493379988">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="478" y="0" key="refactoring.ChangeSignatureDialog/0.0.1600.852@0.0.1600.852" timestamp="1587493379988" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1587035784750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

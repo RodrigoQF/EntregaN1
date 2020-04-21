@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ComputadorDAOMySQL implements ComputadorDAO {
 
@@ -18,8 +19,6 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
     private String deleteSQL="DELETE FROM computador WHERE id=?";
 
     private final MySQLConnection mysql = new MySQLConnection();
-
-
 
     @Override
     public boolean create(Computador computador) {
@@ -31,7 +30,7 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
             stm.setInt(3,computador.getTamanho_disco());
             stm.setInt(4,computador.getQnt_ram());
             int registro = stm.executeUpdate();
-            return (registro>0);
+            return (registro > 0);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -81,17 +80,59 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
             return sistemas;
         }
 
-
-
     @Override
     public boolean update(Computador computador) {
+        Connection conexao = mysql.getConnection();
+        try {
+            PreparedStatement stm = conexao.prepareStatement(updateSQL);
+            System.out.println("Insira o ID do computador que deseja alterar:");
+            stm.setLong(1,computador.getId());
+            System.out.println("Altere a marca do computador:");
+            stm.setString(2,computador.getMarca());
+            System.out.println("Altere o processador do computador:");
+            stm.setString(3,computador.getProcessador());
+            System.out.println("Altere o tamanha do disco do computador:");
+            stm.setInt(4,computador.getTamanho_disco());
+            System.out.println("Altere a quantidade de RAM do computador:");
+            stm.setInt(5,computador.getQnt_ram());
+            int registro = stm.executeUpdate();
+            return (registro > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                conexao.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return false;
     }
 
     @Override
     public boolean delete(Computador computador) {
+        Connection conexao = mysql.getConnection();
+        try {
+            PreparedStatement stm = conexao.prepareStatement(deleteSQL);
+            System.out.println("Insira o ID do computador que deseja deletar:");
+            stm.setLong(1,computador.getId());
+            stm.execute();
+            int registro = stm.executeUpdate();
+            return (registro > 0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                conexao.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return false;
     }
+
 }
 
 
