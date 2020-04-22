@@ -7,6 +7,7 @@ import org.example.persistencia.AplicativoDAO;
 import org.example.persistencia.ComputadorDAO;
 import org.example.persistencia.PaisDAO;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class InterfaceUsuario {
@@ -26,6 +27,8 @@ public class InterfaceUsuario {
     }
     private void imprimirMenu() {
         int opc;
+        int op;
+
         do {
             System.out.println("= Escolha em qual tabela deseja fazer as alterações: =");
             System.out.println("\t1. Pais");
@@ -37,7 +40,6 @@ public class InterfaceUsuario {
             in.nextLine();
 
             switch (opc) {
-                int op;
                 case 1:
                     System.out.println("Tabela pais escolhida:");
                     System.out.println("Escolha a opção do menu:");
@@ -51,20 +53,21 @@ public class InterfaceUsuario {
                     in.nextLine();
 
                     if(op==1){
-                        this.create();
+                        this.createpais();
                     }
                     else if (op==2){
-                        this.read();
+                        this.readpais();
                     }
                     else if (op==3){
-                        this.update();
+                        this.updatepais();
                     }
                     else if (op==4){
-                        this.delete();
+                      this.deletepais();
                     }
-                    else {}
-                    break;
+                    else {
 
+                    }
+                    break;
 
 
 
@@ -80,19 +83,19 @@ public class InterfaceUsuario {
 
                     op= in.nextInt();
                     in.nextLine();
-                    if(op==1){
-                        this.create();
-                    }
-                    else if(op==2){
-                        this.read();
-                    }
-                    else if(op==3){
-                        this.update();
-                    }
-                    else if (op==4) {
-                        this.delete();
-                    }
-                    else{}
+                    //if(op==1){
+                    // this.create();
+                    // }
+                    //  else if(op==2){
+                    //    this.read();
+                    //  }
+                    //  else if(op==3){
+                    //   this.update();
+                    //  }
+                    //   else if (op==4) {
+                    //      this.delete();
+                    //  }
+                    //  else{}
                     break;
                 case 3:
                     System.out.println("Tabela aplicativo escolhida:");
@@ -105,19 +108,19 @@ public class InterfaceUsuario {
 
                     op= in.nextInt();
                     in.nextLine();
-                    if(op==1){
-                        this.create();
-                    }
-                    else if (op==2){
-                        this.read();
-                    }
-                    else if (op==3){
-                        this.update();
-                    }
-                    else if (op==4){
-                        this.delete();
-                    }
-                    else {}
+                    //if(op==1){
+                    //    this.create();
+                    // }
+                    //else if (op==2){
+                    //    this.read();
+                    // }
+                    //else if (op==3){
+                    //    this.update();
+                    // }
+                    //  else if (op==4){
+                    //      this.delete();
+                    // }
+                    //   else {}
                 default:
                     System.out.println("Opção Inválida");
                     break;
@@ -125,5 +128,96 @@ public class InterfaceUsuario {
 
         } while (opc != 4);
     }
+    private void createpais(){
+        Pais controle = new Pais();
+
+        System.out.println("*** Novo pais ***");
+        System.out.print("\nInforme o nome do pais: ");
+        controle.setNome(in.nextLine());
+
+        System.out.print("Informe a populacao do pais: ");
+        controle.setPopulacao(in.nextLong());
+
+        System.out.print("Informe o continente em que o pais esta localizado: ");
+        controle.setContinente(in.nextInt());
+
+        System.out.println("Pais adicionado ao banco de Dados");
 
     }
+
+    private void readpais(){
+        List<Pais> paises = dao.read();
+
+        System.out.println("\n***********************************");
+        System.out.println("*** Lista dos paises cadastrados ***");
+        System.out.println("***********************************");
+        for (Pais pais : paises) {
+            System.out.println(pais);
+        }
+    }
+
+    private void updatepais(){
+        Pais pais = new Pais();
+
+        System.out.println("*** Atualizar um País ***");
+
+        System.out.println("Insira o ID do país que deseja alterar:");
+        pais.setId(in.nextInt());
+
+        System.out.println("Altere o nome do país:");
+        pais.setNome(in.nextLine());
+
+        System.out.println("Altere o continente do país:");
+        pais.setPopulacao(in.nextLong());
+
+        System.out.println("Altere a população do país:");
+        pais.setContinente(in.nextInt());
+
+
+        System.out.println("País atualizado com sucesso.");
+
+    }
+
+    private void deletepais(){
+        List<Pais> alunos = dao.read();
+
+        while (true) {
+            System.out.println("\n**");
+            System.out.println("** Lista de Alunos Cadastrados ");
+            System.out.println("**");
+            int i = 0;
+                for (Pais aluno : alunos) {
+                    System.out.println(i + " - " + aluno);
+                    i++;
+                }
+                System.out.println(i + " - Cancelar operação");
+
+                System.out.print("Qual aluno deseja remover? ");
+                int opc = in.nextInt();
+                //Necessário para ler a quebra de linha (enter)
+                in.nextLine();
+
+                if (opc==i) {
+                    // Cancelar operação
+                    break;
+                }
+
+                if (opc >= alunos.size() || opc < 0) {
+                    System.out.println("Esta opção não é válida");
+                } else {
+                    if (dao.delete(alunos.get(opc))) {
+                        System.out.println("Aluno " + alunos.get(opc).getNome() +
+                                " removido com sucesso");
+                    } else {
+                        System.out.println("OPS: falar ao tentar remover");
+                    }
+                    //Isso para o while infinito
+                    break;
+                }
+                for (Controle controle : controles) {
+                    System.out.println(controle);
+                }
+        }
+
+    }
+}

@@ -84,13 +84,9 @@ public class PaisDAOMySQL implements PaisDAO {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
-            System.out.println("Insira o ID do país que deseja alterar:");
             stm.setLong(1,pais.getId());
-            System.out.println("Altere o nome do país:");
             stm.setString(2,pais.getNome());
-            System.out.println("Altere o continente do país:");
             stm.setInt(3,pais.getContinente());
-            System.out.println("Altere a população do país:");
             stm.setLong(4,pais.getPopulacao());
             int registro = stm.executeUpdate();
             return (registro > 0);
