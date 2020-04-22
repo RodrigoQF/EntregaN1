@@ -35,7 +35,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/org/example/entidades" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Entrega02_2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -104,9 +104,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="730" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587575499424" />
-    <state x="734" y="370" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587568432514">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="522" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587583614165">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="522" y="259" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1587583614165" />
     <state x="612" y="303" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1600.852@0.0.1600.852" timestamp="1587489303447" />
     <state x="734" y="370" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587568432514" />
     <state x="660" y="171" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1587575470864">
@@ -121,9 +122,10 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="524" y="210" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1600.852@0.0.1600.852" timestamp="1587580566348" />
-    <state x="617" y="225" key="FileChooserDialogImpl" timestamp="1587582143686">
-      <screen x="0" y="0" width="1600" height="852" />
+    <state x="527" y="192" key="FileChooserDialogImpl" timestamp="1587583400716">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="527" y="192" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587583400716" />
     <state x="617" y="225" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1587582143686" />
     <state x="1276" y="288" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587575345591" />
     <state width="1544" height="390" key="GridCell.Tab.0.bottom" timestamp="1587581978360">
@@ -150,10 +152,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="776" y="301" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587035818764" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587481216234">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1587583540725">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587481216234" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587583540725" />
     <state x="478" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1587578847015">
       <screen x="0" y="0" width="1600" height="852" />
     </state>

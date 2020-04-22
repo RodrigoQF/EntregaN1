@@ -83,19 +83,19 @@ public class InterfaceUsuario {
 
                     op= in.nextInt();
                     in.nextLine();
-                    //if(op==1){
-                    // this.create();
-                    // }
-                    //  else if(op==2){
-                    //    this.read();
-                    //  }
+                    if(op==1){
+                     this.createcomputador();
+                     }
+                      else if(op==2){
+                        this.readcomputador();
+                      }
                     //  else if(op==3){
                     //   this.update();
                     //  }
                     //   else if (op==4) {
                     //      this.delete();
                     //  }
-                    //  else{}
+                      else{}
                     break;
                 case 3:
                     System.out.println("Tabela aplicativo escolhida:");
@@ -108,19 +108,19 @@ public class InterfaceUsuario {
 
                     op= in.nextInt();
                     in.nextLine();
-                    //if(op==1){
-                    //    this.create();
-                    // }
-                    //else if (op==2){
-                    //    this.read();
-                    // }
+                    if(op==1){
+                        this.createaplicativo();
+                     }
+                    else if (op==2){
+                        this.readaplicativo();
+                     }
                     //else if (op==3){
                     //    this.update();
                     // }
                     //  else if (op==4){
                     //      this.delete();
                     // }
-                    //   else {}
+                      else {}
                 default:
                     System.out.println("Opção Inválida");
                     break;
@@ -214,10 +214,74 @@ public class InterfaceUsuario {
                     //Isso para o while infinito
                     break;
                 }
-                for (Controle controle : controles) {
+                for (Pais controle : paises) {
                     System.out.println(controle);
                 }
         }
 
     }
+    private void createaplicativo(){
+        Aplicativo controle = new Aplicativo();
+
+        System.out.println("*** Novo aplicativo***");
+
+        System.out.print("\nInforme o nome do aplicativo: ");
+        controle.setNome(in.nextLine());
+
+        System.out.print("Informe o desenvolvedor do aplicativo: ");
+        controle.setDesenvolvedor(in.nextLine());
+
+        System.out.print("Informe o numero de downloads do aplicativo: ");
+        controle.setNrm_downloads(in.nextInt());
+
+
+
+        System.out.println("Aplicativo adicionado ao banco de Dados");
+
+    }
+    private void readaplicativo(){
+        List<Aplicativo> aplicativos = daao.read();
+
+        System.out.println("\n***********************************");
+        System.out.println("*** Lista dos aplicativos cadastrados ***");
+        System.out.println("***********************************");
+        for (Aplicativo aplicativo : aplicativos ) {
+            System.out.println(aplicativo);
+        }
+    }
+    private void createcomputador(){
+        Computador controle = new Computador();
+
+        System.out.println("*** Novo Computador***");
+
+        System.out.print("\nInforme a marca do computador: ");
+        controle.setMarca(in.nextLine());
+
+        System.out.print("Informe o processador do computador: ");
+        controle.setProcessador(in.nextLine());
+
+        System.out.print("Informe a quantidade de ram do computador: ");
+        controle.setQnt_ram(in.nextInt());
+
+        System.out.print("Informe o tamanho do disco do computador: ");
+        controle.setTamanho_disco(in.nextInt());
+
+
+
+
+        System.out.println("Aplicativo adicionado ao banco de Dados");
+
+    }
+    private void readcomputador(){
+        List<Computador> computadores = daoo.read();
+
+        System.out.println("\n***********************************");
+        System.out.println("*** Lista dos computadores cadastrados ***");
+        System.out.println("***********************************");
+        for (Computador computador : computadores ) {
+            System.out.println(computador);
+        }
+    }
+
 }
+
