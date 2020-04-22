@@ -56,6 +56,7 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
 
                 while (rs.next()) {
                     Computador computador = new Computador();
+                    computador.setId(rs.getLong("id"));
                     computador.setMarca(rs.getString("marca"));
                     computador.setProcessador(rs.getString("processador"));
                     computador.setTamanho_disco(rs.getInt("tamanho_disco"));
@@ -85,18 +86,12 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
-            System.out.println("Insira o ID do computador que deseja alterar:");
             stm.setLong(1,computador.getId());
-            System.out.println("Altere a marca do computador:");
             stm.setString(2,computador.getMarca());
-            System.out.println("Altere o processador do computador:");
             stm.setString(3,computador.getProcessador());
-            System.out.println("Altere o tamanha do disco do computador:");
             stm.setInt(4,computador.getTamanho_disco());
-            System.out.println("Altere a quantidade de RAM do computador:");
             stm.setInt(5,computador.getQnt_ram());
-            int registro = stm.executeUpdate();
-            return (registro > 0);
+            stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -115,11 +110,9 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);
-            System.out.println("Insira o ID do computador que deseja deletar:");
             stm.setLong(1,computador.getId());
             stm.execute();
-            int registro = stm.executeUpdate();
-            return (registro > 0);
+            stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -56,9 +56,10 @@ public class PaisDAOMySQL implements PaisDAO {
 
             while (rs.next()) {
                 Pais pais = new Pais();
+                pais.setId(rs.getLong("id"));
                 pais.setNome(rs.getString("nome"));
-                pais.setContinente(rs.getInt("continente"));
                 pais.setPopulacao(rs.getLong("populacao"));
+                pais.setContinente(rs.getInt("continente"));
 
                 planeta.add(pais);
             }
@@ -88,8 +89,7 @@ public class PaisDAOMySQL implements PaisDAO {
             stm.setString(2,pais.getNome());
             stm.setInt(3,pais.getContinente());
             stm.setLong(4,pais.getPopulacao());
-            int registro = stm.executeUpdate();
-            return (registro > 0);
+            stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -108,11 +108,9 @@ public class PaisDAOMySQL implements PaisDAO {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);
-            System.out.println("Insira o ID do país que deseja deletar:");
             stm.setLong(1,pais.getId());
             stm.execute();
-            int registro = stm.executeUpdate();
-            return (registro > 0);
+            stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

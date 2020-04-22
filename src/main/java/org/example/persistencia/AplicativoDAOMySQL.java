@@ -56,9 +56,10 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
 
                 while (rs.next()) {
                     Aplicativo aplicativo = new Aplicativo();
+                    aplicativo.setId(rs.getLong("id"));
                     aplicativo.setNome(rs.getString("nome"));
                     aplicativo.setDesenvolvedor(rs.getString("desenvolvedor"));
-                    aplicativo.setNrm_downloads(rs.getInt("nmr_downloads"));
+                    aplicativo.setNrm_downloads(rs.getInt("nrm_downloads"));
 
                     store.add(aplicativo);
                 }
@@ -85,16 +86,11 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
-            System.out.println("Insira o ID do aplicativo que deseja alterar:");
             stm.setLong(1,aplicativo.getId());
-            System.out.println("Altere o nome do aplicativo:");
             stm.setString(2,aplicativo.getNome());
-            System.out.println("Altere o desenvolvedor do aplicativo:");
             stm.setString(3,aplicativo.getDesenvolvedor());
-            System.out.println("Altere o número de downloads do aplicativo:");
             stm.setInt(4,aplicativo.getNrm_downloads());
-            int registro = stm.executeUpdate();
-            return (registro > 0);
+            stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -113,11 +109,9 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);
-            System.out.println("Insira o ID do aplicativo que deseja deletar:");
             stm.setLong(1,aplicativo.getId());
             stm.execute();
-            int registro = stm.executeUpdate();
-            return (registro > 0);
+            stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
