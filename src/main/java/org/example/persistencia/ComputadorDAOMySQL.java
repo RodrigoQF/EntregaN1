@@ -21,7 +21,7 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
     private final MySQLConnection mysql = new MySQLConnection();
 
     @Override
-    public boolean create(Computador computador) {
+    public boolean createcomputador(Computador computador) {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(createSQL);
@@ -45,7 +45,7 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
     }
 
     @Override
-    public List<Computador> read() {
+    public List<Computador> readcomputador() {
 
             Connection conexao = mysql.getConnection();
             List<Computador> sistemas = new ArrayList();
@@ -81,7 +81,7 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
         }
 
     @Override
-    public boolean update(Computador computador) {
+    public boolean updatecomputador(Computador computador) {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
@@ -111,7 +111,7 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
     }
 
     @Override
-    public boolean delete(Computador computador) {
+    public boolean deletecomputador(Computador computador) {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);

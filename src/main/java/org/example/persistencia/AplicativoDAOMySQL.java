@@ -23,7 +23,7 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
 
 
         @Override
-        public boolean create(Aplicativo aplicativo) {
+        public boolean createaplicativo(Aplicativo aplicativo) {
             Connection conexao = mysql.getConnection();
             try {
                 PreparedStatement stm = conexao.prepareStatement(createSQL);
@@ -46,7 +46,7 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
         }
 
         @Override
-        public List<Aplicativo> read() {
+        public List<Aplicativo> readaplicativo() {
             Connection conexao = mysql.getConnection();
             List<Aplicativo> store = new ArrayList();
 
@@ -81,7 +81,7 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
         }
 
     @Override
-    public boolean update(Aplicativo aplicativo) {
+    public boolean updateaplicativo(Aplicativo aplicativo) {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
@@ -109,7 +109,7 @@ public class AplicativoDAOMySQL implements AplicativoDAO{
     }
 
     @Override
-    public boolean delete(Aplicativo aplicativo) {
+    public boolean deleteaplicativo(Aplicativo aplicativo) {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);

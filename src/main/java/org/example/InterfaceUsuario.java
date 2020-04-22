@@ -89,12 +89,12 @@ public class InterfaceUsuario {
                       else if(op==2){
                         this.readcomputador();
                       }
-                    //  else if(op==3){
-                    //   this.update();
-                    //  }
-                    //   else if (op==4) {
-                    //      this.delete();
-                    //  }
+                      else if(op==3){
+                       this.updatecomputador();
+                         }
+                       else if (op==4) {
+                          this.deletecomputador();
+                      }
                       else{}
                     break;
                 case 3:
@@ -114,12 +114,12 @@ public class InterfaceUsuario {
                     else if (op==2){
                         this.readaplicativo();
                      }
-                    //else if (op==3){
-                    //    this.update();
-                    // }
-                    //  else if (op==4){
-                    //      this.delete();
-                    // }
+                    else if (op==3){
+                        this.updateaplicativo();
+                     }
+                      else if (op==4){
+                         this.deleteaplicativo();
+                      }
                       else {}
                 default:
                     System.out.println("Opção Inválida");
@@ -129,24 +129,24 @@ public class InterfaceUsuario {
         } while (opc != 4);
     }
     private void createpais(){
-        Pais controle = new Pais();
+        Pais paises = new Pais();
 
         System.out.println("*** Novo pais ***");
         System.out.print("\nInforme o nome do pais: ");
-        controle.setNome(in.nextLine());
+        paises.setNome(in.nextLine());
 
         System.out.print("Informe a populacao do pais: ");
-        controle.setPopulacao(in.nextLong());
+        paises.setPopulacao(in.nextLong());
 
         System.out.print("Informe o continente em que o pais esta localizado: ");
-        controle.setContinente(in.nextInt());
+        paises.setContinente(in.nextInt());
 
         System.out.println("Pais adicionado ao banco de Dados");
 
     }
 
     private void readpais(){
-        List<Pais> paises = dao.read();
+        List<Pais> paises = dao.readpais();
 
         System.out.println("\n***********************************");
         System.out.println("*** Lista dos paises cadastrados ***");
@@ -179,20 +179,20 @@ public class InterfaceUsuario {
     }
 
     private void deletepais(){
-        List<Pais> alunos = dao.read();
+        List<Pais> paises = dao.readpais();
 
         while (true) {
             System.out.println("\n**");
-            System.out.println("** Lista de Alunos Cadastrados ");
+            System.out.println("** Lista de Paises Cadastrados ");
             System.out.println("**");
             int i = 0;
-                for (Pais aluno : alunos) {
-                    System.out.println(i + " - " + aluno);
+                for (Pais pais : paises) {
+                    System.out.println(i + " - " + pais);
                     i++;
                 }
                 System.out.println(i + " - Cancelar operação");
 
-                System.out.print("Qual aluno deseja remover? ");
+                System.out.print("Qual pais deseja remover? ");
                 int opc = in.nextInt();
                 //Necessário para ler a quebra de linha (enter)
                 in.nextLine();
@@ -202,11 +202,11 @@ public class InterfaceUsuario {
                     break;
                 }
 
-                if (opc >= alunos.size() || opc < 0) {
+                if (opc >= paises.size() || opc < 0) {
                     System.out.println("Esta opção não é válida");
                 } else {
-                    if (dao.delete(alunos.get(opc))) {
-                        System.out.println("Aluno " + alunos.get(opc).getNome() +
+                    if (dao.deletepais(paises.get(opc))) {
+                        System.out.println("Pais " + paises.get(opc).getNome() +
                                 " removido com sucesso");
                     } else {
                         System.out.println("OPS: falar ao tentar remover");
@@ -214,25 +214,25 @@ public class InterfaceUsuario {
                     //Isso para o while infinito
                     break;
                 }
-                for (Pais controle : paises) {
-                    System.out.println(controle);
+                for (Pais pais : paises) {
+                    System.out.println(pais);
                 }
         }
 
     }
     private void createaplicativo(){
-        Aplicativo controle = new Aplicativo();
+        Aplicativo app = new Aplicativo();
 
         System.out.println("*** Novo aplicativo***");
 
         System.out.print("\nInforme o nome do aplicativo: ");
-        controle.setNome(in.nextLine());
+        app.setNome(in.nextLine());
 
         System.out.print("Informe o desenvolvedor do aplicativo: ");
-        controle.setDesenvolvedor(in.nextLine());
+        app.setDesenvolvedor(in.nextLine());
 
         System.out.print("Informe o numero de downloads do aplicativo: ");
-        controle.setNrm_downloads(in.nextInt());
+        app.setNrm_downloads(in.nextInt());
 
 
 
@@ -240,7 +240,7 @@ public class InterfaceUsuario {
 
     }
     private void readaplicativo(){
-        List<Aplicativo> aplicativos = daao.read();
+        List<Aplicativo> aplicativos = daao.readaplicativo();
 
         System.out.println("\n***********************************");
         System.out.println("*** Lista dos aplicativos cadastrados ***");
@@ -249,22 +249,88 @@ public class InterfaceUsuario {
             System.out.println(aplicativo);
         }
     }
+    private void updateaplicativo(){
+        Aplicativo aplicativo = new Aplicativo();
+
+        System.out.println("*** Atualizar um Aplicativo ***");
+
+        System.out.println("Insira o ID do aplicativo que deseja alterar:");
+        aplicativo.setId(in.nextInt());
+
+        System.out.println("Altere o nome do aplicativo:");
+        aplicativo.setNome(in.nextLine());
+
+        System.out.println("Altere o desenvolvedor do aplicativo:");
+        aplicativo.setDesenvolvedor(in.nextLine());
+
+        System.out.println("Altere o numero de downloads:");
+        aplicativo.setNrm_downloads(in.nextInt());
+
+
+        System.out.println("Aplicativo atualizado com sucesso.");
+
+    }
+
+
+
+    private void deleteaplicativo(){
+        List<Aplicativo> aplicativos = daao.readaplicativo();
+
+        while (true) {
+            System.out.println("\n**");
+            System.out.println("** Lista de Aplicativos Cadastrados ");
+            System.out.println("**");
+            int i = 0;
+            for (Aplicativo aplicativo : aplicativos) {
+                System.out.println(i + " - " + aplicativos);
+                i++;
+            }
+            System.out.println(i + " - Cancelar operação");
+
+            System.out.print("Qual aplicativo deseja remover? ");
+            int opc = in.nextInt();
+            //Necessário para ler a quebra de linha (enter)
+            in.nextLine();
+
+            if (opc==i) {
+                // Cancelar operação
+                break;
+            }
+
+            if (opc >= aplicativos.size() || opc < 0) {
+                System.out.println("Esta opção não é válida");
+            } else {
+                if (daao.deleteaplicativo(aplicativos.get(opc))) {
+                    System.out.println("Aplicativo " + aplicativos.get(opc).getNome() +
+                            " removido com sucesso");
+                } else {
+                    System.out.println("OPS: falar ao tentar remover");
+                }
+                //Isso para o while infinito
+                break;
+            }
+            for (Aplicativo aplicativo : aplicativos) {
+                System.out.println(aplicativo);
+            }
+        }
+
+    }
     private void createcomputador(){
-        Computador controle = new Computador();
+        Computador comp = new Computador();
 
         System.out.println("*** Novo Computador***");
 
         System.out.print("\nInforme a marca do computador: ");
-        controle.setMarca(in.nextLine());
+        comp.setMarca(in.nextLine());
 
         System.out.print("Informe o processador do computador: ");
-        controle.setProcessador(in.nextLine());
+        comp.setProcessador(in.nextLine());
 
         System.out.print("Informe a quantidade de ram do computador: ");
-        controle.setQnt_ram(in.nextInt());
+        comp.setQnt_ram(in.nextInt());
 
         System.out.print("Informe o tamanho do disco do computador: ");
-        controle.setTamanho_disco(in.nextInt());
+        comp.setTamanho_disco(in.nextInt());
 
 
 
@@ -273,7 +339,7 @@ public class InterfaceUsuario {
 
     }
     private void readcomputador(){
-        List<Computador> computadores = daoo.read();
+        List<Computador> computadores = daoo.readcomputador();
 
         System.out.println("\n***********************************");
         System.out.println("*** Lista dos computadores cadastrados ***");
@@ -281,6 +347,73 @@ public class InterfaceUsuario {
         for (Computador computador : computadores ) {
             System.out.println(computador);
         }
+    }
+    private void updatecomputador(){
+        Computador computador = new Computador();
+
+        System.out.println("*** Atualizar um computador ***");
+
+        System.out.println("Insira o ID do computador que deseja alterar:");
+        computador.setId(in.nextInt());
+
+        System.out.println("Altere o marca do computador:");
+        computador.setMarca(in.nextLine());
+
+        System.out.println("Altere o processador do computador:");
+        computador.setProcessador(in.nextLine());
+
+        System.out.println("Altere o numero de downloads:");
+        computador.setQnt_ram(in.nextInt());
+
+        System.out.println("Altere o tamanho do disco:");
+        computador.setTamanho_disco(in.nextInt());
+
+
+
+        System.out.println("Aplicativo atualizado com sucesso.");
+
+    }
+    private void deletecomputador(){
+        List<Computador> computadores = daoo.readcomputador();
+
+        while (true) {
+            System.out.println("\n**");
+            System.out.println("** Lista de Computadores Cadastrados ");
+            System.out.println("**");
+            int i = 0;
+            for (Computador computador : computadores) {
+                System.out.println(i + " - " + computadores);
+                i++;
+            }
+            System.out.println(i + " - Cancelar operação");
+
+            System.out.print("Qual Computador deseja remover? ");
+            int opc = in.nextInt();
+            //Necessário para ler a quebra de linha (enter)
+            in.nextLine();
+
+            if (opc==i) {
+                // Cancelar operação
+                break;
+            }
+
+            if (opc >= computadores.size() || opc < 0) {
+                System.out.println("Esta opção não é válida");
+            } else {
+                if (daoo.deletecomputador(computadores.get(opc))) {
+                    System.out.println("Computador " + computadores.get(opc).getMarca() +
+                            " removido com sucesso");
+                } else {
+                    System.out.println("OPS: falar ao tentar remover");
+                }
+                //Isso para o while infinito
+                break;
+            }
+            for (Computador computador : computadores) {
+                System.out.println(computador);
+            }
+        }
+
     }
 
 }

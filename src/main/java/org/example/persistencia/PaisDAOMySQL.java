@@ -22,7 +22,7 @@ public class PaisDAOMySQL implements PaisDAO {
 
     //insert
     @Override
-    public boolean create(Pais pais) {
+    public boolean createpais(Pais pais) {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(createSQL);
@@ -46,7 +46,7 @@ public class PaisDAOMySQL implements PaisDAO {
 
     //select
     @Override
-    public List<Pais> read() {
+    public List<Pais> readpais() {
         Connection conexao = mysql.getConnection();
         List<Pais> planeta = new ArrayList();
 
@@ -80,7 +80,7 @@ public class PaisDAOMySQL implements PaisDAO {
     }
 
     @Override
-    public boolean update (Pais pais) {
+    public boolean updatepais (Pais pais) {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
@@ -104,7 +104,7 @@ public class PaisDAOMySQL implements PaisDAO {
     }
 
     @Override
-    public boolean delete(Pais pais) {
+    public boolean deletepais(Pais pais) {
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);
