@@ -2,32 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e3afde-b7e7-41da-b6e7-92364da021f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/EntregaN1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EntregaN1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetoN1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoN1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/InterfaceUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/InterfaceUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entidades/Aplicativo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entidades/Aplicativo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entidades/Computador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entidades/Computador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entidades/Pais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entidades/Pais.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/AplicativoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/AplicativoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/AplicativoDAOMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/AplicativoDAOMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/ComputadorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/ComputadorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/ComputadorDAOMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/ComputadorDAOMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/MySQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/MySQLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/PaisDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/PaisDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistencia/PaisDAOMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistencia/PaisDAOMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/InterfaceUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/InterfaceUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/persistencia/AplicativoDAOMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/persistencia/AplicativoDAOMySQL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/persistencia/ComputadorDAOMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/persistencia/ComputadorDAOMySQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/persistencia/PaisDAOMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/persistencia/PaisDAOMySQL.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="334" />
+    <option name="myElementSize" value="341" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -69,6 +50,8 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -118,6 +101,10 @@
       <workItem from="1587585210424" duration="1629000" />
       <workItem from="1587587047443" duration="6829000" />
       <workItem from="1587638315693" duration="5261000" />
+      <workItem from="1587643852075" duration="60000" />
+      <workItem from="1587654228833" duration="3892000" />
+      <workItem from="1587663070370" duration="1467000" />
+      <workItem from="1587666324351" duration="1360000" />
     </task>
     <servers />
   </component>
@@ -155,32 +142,40 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="524" y="210" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1600.852@0.0.1600.852" timestamp="1587580566348" />
+    <state x="707" y="367" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587667386180">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="707" y="367" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1587667386180" />
     <state x="527" y="192" key="FileChooserDialogImpl" timestamp="1587583400716">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="527" y="192" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587583400716" />
     <state x="617" y="225" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1587582143686" />
     <state x="1276" y="288" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587575345591" />
-    <state width="1877" height="6" key="GridCell.Tab.0.bottom" timestamp="1587643581186">
+    <state width="1877" height="137" key="GridCell.Tab.0.bottom" timestamp="1587664538579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1544" height="282" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1587593742081" />
-    <state width="1877" height="6" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587643581186" />
-    <state width="1877" height="6" key="GridCell.Tab.0.center" timestamp="1587643581186">
+    <state width="1877" height="137" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587664538579" />
+    <state width="1877" height="137" key="GridCell.Tab.0.center" timestamp="1587664538579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1544" height="282" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1587593742081" />
-    <state width="1877" height="6" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587643581186" />
-    <state width="1877" height="6" key="GridCell.Tab.0.left" timestamp="1587643581186">
+    <state width="1877" height="137" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587664538579" />
+    <state width="1877" height="137" key="GridCell.Tab.0.left" timestamp="1587664538579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1544" height="282" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1587593742081" />
-    <state width="1877" height="6" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587643581186" />
-    <state width="1877" height="6" key="GridCell.Tab.0.right" timestamp="1587643581186">
+    <state width="1877" height="137" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587664538579" />
+    <state width="1877" height="137" key="GridCell.Tab.0.right" timestamp="1587664538579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1544" height="282" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1587593742081" />
-    <state width="1877" height="6" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587643581186" />
+    <state width="1877" height="137" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587664538579" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1587667461085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587667461085" />
     <state x="776" y="301" key="chooseDestDirectoryDialog" timestamp="1587035818764">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -201,6 +196,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EntregaN1$App.ic" NAME="App Coverage Results" MODIFIED="1587643296513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TesteConexa$App.ic" NAME="App Coverage Results" MODIFIED="1587654479076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
   </component>

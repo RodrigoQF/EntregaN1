@@ -8,10 +8,7 @@ public class Aplicativo {
 
 
     public Aplicativo(){
-        this.setId(-1);
-        this.setNome("Rodrigo");
-        this.setDesenvolvedor("Rodrigo");
-        this.setNrm_downloads(0);
+
     }
     public Aplicativo(long id, String nome, String desenvolvedor, int nrm_downloads){
         this.setId(id);

@@ -185,7 +185,7 @@ public class InterfaceUsuario {
         paises.setId(in.nextInt());
         in.nextLine();
 
-        System.out.println("Altere o nome do país...:");
+        System.out.println("Altere o nome do país para...:");
         paises.setNome(in.nextLine());
 
         System.out.println("Altere o continente do país para...:");

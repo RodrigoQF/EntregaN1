@@ -85,7 +85,6 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
     public boolean updatecomputador(Computador computador) {
         Connection conexao = mysql.getConnection();
         int resultado = -1;
-        System.out.println(computador);
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
             stm.setString(1,computador.getMarca());
