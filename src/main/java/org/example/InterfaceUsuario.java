@@ -112,7 +112,7 @@ public class InterfaceUsuario {
                     System.out.println("\t1. Create - Adicionar um aplicativo à tabela");
                     System.out.println("\t2. Read - Ler os dados atuais da tabela");
                     System.out.println("\t3. Update - Atualizar os dados da tabela");
-                    System.out.println("\t4. Delete - Deletar um pais da tabela");
+                    System.out.println("\t4. Delete - Deletar um aplicativo da tabela");
                     System.out.println("\t5. Sair - Voltar para  o menu principal");
 
                     op= in.nextInt();
@@ -183,15 +183,16 @@ public class InterfaceUsuario {
 
         System.out.println("Insira o ID do país que deseja alterar:");
         paises.setId(in.nextInt());
+        in.nextLine();
 
-        System.out.println("Altere o nome do país:");
+        System.out.println("Altere o nome do país...:");
         paises.setNome(in.nextLine());
 
-        System.out.println("Altere o continente do país:");
-        paises.setPopulacao(in.nextLong());
-
-        System.out.println("Altere a população do país:");
+        System.out.println("Altere o continente do país para...:");
         paises.setContinente(in.nextInt());
+
+        System.out.println("Altere a população do país para...:");
+        paises.setPopulacao(in.nextLong());
 
 
         if (dao.updatepais(paises)) {
@@ -230,7 +231,7 @@ public class InterfaceUsuario {
                     System.out.println("Esta opção não é válida");
                 } else {
                     if (dao.deletepais(paises.get(opc))) {
-                        System.out.println("OPS: falha ao tentar remover");
+                        System.out.println("Falha ao tentar remover");
                     } else {
                         System.out.println("Pais " + paises.get(opc).getNome() +
                                 " removido com sucesso");
@@ -283,6 +284,7 @@ public class InterfaceUsuario {
 
         System.out.println("Insira o ID do aplicativo que deseja alterar:");
         app.setId(in.nextInt());
+        in.nextLine();
 
         System.out.println("Altere o nome do aplicativo:");
         app.setNome(in.nextLine());
@@ -331,7 +333,7 @@ public class InterfaceUsuario {
                 System.out.println("Esta opção não é válida");
             } else {
                 if (daao.deleteaplicativo(aplicativos.get(opc))) {
-                    System.out.println("OPS: falar ao tentar remover");
+                    System.out.println("Ops, falha ao remover");
                 } else {
                     System.out.println("Aplicativo " + aplicativos.get(opc).getNome() +
                             " removido com sucesso");
@@ -387,6 +389,7 @@ public class InterfaceUsuario {
 
         System.out.println("Insira o ID do computador que deseja alterar:");
         comp.setId(in.nextInt());
+        in.nextLine();
 
         System.out.println("Altere o marca do computador:");
         comp.setMarca(in.nextLine());
@@ -394,13 +397,13 @@ public class InterfaceUsuario {
         System.out.println("Altere o processador do computador:");
         comp.setProcessador(in.nextLine());
 
-        System.out.println("Altere o numero de downloads:");
+        System.out.println("Altere a qnt de ram:");
         comp.setQnt_ram(in.nextInt());
 
         System.out.println("Altere o tamanho do disco:");
         comp.setTamanho_disco(in.nextInt());
 
-        if (daoo.createcomputador(comp)) {
+        if (daoo.updatecomputador(comp)) {
             System.out.println("Computador atualizado no banco de Dados");
         } else {
             System.out.println("Ops: problema ao atualizar o computador :(");
@@ -415,7 +418,7 @@ public class InterfaceUsuario {
             System.out.println("******************************************\n");
             int i = 0;
             for (Computador computador : computadores) {
-                System.out.println(i + " - " + computadores);
+                System.out.println(i + " - " + computador);
                 i++;
             }
             System.out.println(i + " - Cancelar operação");
@@ -434,12 +437,11 @@ public class InterfaceUsuario {
                 System.out.println("Esta opção não é válida");
             } else {
                 if (daoo.deletecomputador(computadores.get(opc))) {
-                    System.out.println("OPS: falha ao tentar remover");
+                    System.out.println("Falha ao remover");
                 } else {
                     System.out.println("Computador " + computadores.get(opc).getMarca() +
                             " removido com sucesso");
                 }
-                //Isso para o while infinito
                 break;
             }
             for (Computador computador : computadores) {

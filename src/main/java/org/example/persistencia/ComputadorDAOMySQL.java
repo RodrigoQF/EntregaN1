@@ -84,14 +84,17 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
     @Override
     public boolean updatecomputador(Computador computador) {
         Connection conexao = mysql.getConnection();
+        int resultado = -1;
+        System.out.println(computador);
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
-            stm.setLong(1,computador.getId());
-            stm.setString(2,computador.getMarca());
-            stm.setString(3,computador.getProcessador());
-            stm.setInt(4,computador.getTamanho_disco());
-            stm.setInt(5,computador.getQnt_ram());
-            stm.executeUpdate();
+            stm.setString(1,computador.getMarca());
+            stm.setString(2,computador.getProcessador());
+            stm.setInt(3,computador.getTamanho_disco());
+            stm.setInt(4,computador.getQnt_ram());
+            stm.setLong(5,computador.getId());
+
+            resultado=stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -102,17 +105,18 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
                 e.printStackTrace();
             }
         }
-        return false;
+        return (resultado>0);
     }
 
     @Override
     public boolean deletecomputador(Computador computador) {
+        int resultado = -1;
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);
             stm.setLong(1,computador.getId());
             stm.execute();
-            stm.executeUpdate();
+            resultado=stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -123,7 +127,7 @@ public class ComputadorDAOMySQL implements ComputadorDAO {
                 e.printStackTrace();
             }
         }
-        return false;
+        return (resultado>0);
     }
 
 }

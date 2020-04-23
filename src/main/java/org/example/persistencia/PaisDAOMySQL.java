@@ -83,13 +83,17 @@ public class PaisDAOMySQL implements PaisDAO {
     @Override
     public boolean updatepais (Pais pais) {
         Connection conexao = mysql.getConnection();
+         int resultado = -1;
         try {
             PreparedStatement stm = conexao.prepareStatement(updateSQL);
-            stm.setLong(1,pais.getId());
-            stm.setString(2,pais.getNome());
-            stm.setInt(3,pais.getContinente());
-            stm.setLong(4,pais.getPopulacao());
-            stm.executeUpdate();
+            stm.setString(1,pais.getNome());
+            stm.setInt(2,pais.getContinente());
+            stm.setLong(3,pais.getPopulacao());
+            stm.setLong(4,pais.getId());
+
+            resultado = stm.executeUpdate();
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -100,17 +104,19 @@ public class PaisDAOMySQL implements PaisDAO {
                 e.printStackTrace();
             }
         }
-        return false;
+        return (resultado >0);
     }
 
     @Override
     public boolean deletepais(Pais pais) {
+        int resultado = -1;
+
         Connection conexao = mysql.getConnection();
         try {
             PreparedStatement stm = conexao.prepareStatement(deleteSQL);
             stm.setLong(1,pais.getId());
             stm.execute();
-            stm.executeUpdate();
+            resultado = stm.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -121,7 +127,7 @@ public class PaisDAOMySQL implements PaisDAO {
                 e.printStackTrace();
             }
         }
-        return false;
+        return (resultado>0);
     }
 
 }
