@@ -1,4 +1,4 @@
-//Nomes
+//Nomes Diego Garcia Buriola, Rodrigo Queiroz de Francischi, Victor Garcia
 package org.example;
 
 import org.example.persistencia.AplicativoDAOMySQL;
