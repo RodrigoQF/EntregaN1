@@ -1,5 +1,8 @@
 package org.example;
-// Nomes
+// Diego Garcia Buriola - TIA - 31952917
+// Rodrigo Queiroz de Francischi - TIA - 31948596
+// Victor Hugo Pinheiro Garcia - TIA - 31917658
+
 import org.example.entidades.Aplicativo;
 import org.example.entidades.Computador;
 import org.example.entidades.Pais;
@@ -15,6 +18,7 @@ public class InterfaceUsuario {
     ComputadorDAO daoo;
     AplicativoDAO daao;
     Scanner in;
+
     public InterfaceUsuario(PaisDAO dao, ComputadorDAO daoo, AplicativoDAO daao) {
         this.dao = dao;
         this.daoo = daoo;
@@ -25,6 +29,7 @@ public class InterfaceUsuario {
     public void iniciar() {
         imprimirMenu();
     }
+
     private void imprimirMenu() {
         int opc;
         int op;
@@ -37,7 +42,7 @@ public class InterfaceUsuario {
             System.out.println("\t4. Sair");
             System.out.print("\nEscolha uma opção: ");
             opc = in.nextInt();
-            in.nextLine();
+
             while(opc < 1 || opc > 4){
                 System.out.println("Opção inválida, digite novamente: ");
                 System.out.println("\t1. Pais");
@@ -45,7 +50,7 @@ public class InterfaceUsuario {
                 System.out.println("\t3. Aplicativo");
                 System.out.println("\t4. Sair");
                 System.out.print("\nEscolha uma opção: ");
-                in.nextLine();
+                opc = in.nextInt();
             }
 
             switch (opc) {
@@ -59,7 +64,6 @@ public class InterfaceUsuario {
                     System.out.println("\t5. Sair - Voltar para  o menu principal");
 
                     op= in.nextInt();
-                    in.nextLine();
 
                     if(op==1){
                         this.createpais();
@@ -71,7 +75,7 @@ public class InterfaceUsuario {
                         this.updatepais();
                     }
                     else if (op==4){
-                      this.deletepais();
+                        this.deletepais();
                     }
                     else {
                         imprimirMenu();
@@ -88,14 +92,13 @@ public class InterfaceUsuario {
                     System.out.println("\t5. Sair - Voltar para  o menu principal");
 
                     op= in.nextInt();
-                    in.nextLine();
 
                     if(op==1){
                         this.createcomputador();
-                     }
+                    }
                     else if(op==2){
                         this.readcomputador();
-                      }
+                    }
                     else if(op==3){
                         this.updatecomputador();
                     }
@@ -116,23 +119,23 @@ public class InterfaceUsuario {
                     System.out.println("\t5. Sair - Voltar para  o menu principal");
 
                     op= in.nextInt();
-                    in.nextLine();
+
                     if(op==1){
                         this.createaplicativo();
-                     }
+                    }
                     else if (op==2){
                         this.readaplicativo();
-                     }
+                    }
                     else if (op==3){
                         this.updateaplicativo();
-                     }
-                      else if (op==4){
-                         this.deleteaplicativo();
-                      }
-                      else {
-                          imprimirMenu();
                     }
-                default:
+                    else if (op==4){
+                        this.deleteaplicativo();
+                    }
+                    else {
+                        imprimirMenu();
+                    }
+                case 4:
                     System.out.println("Saindo...");
                     break;
             }
@@ -162,7 +165,6 @@ public class InterfaceUsuario {
         } else {
             System.out.println("Ops: problema ao adicionar o país :(");
         }
-
     }
 
     private void readpais(){
@@ -211,40 +213,40 @@ public class InterfaceUsuario {
             System.out.println("*** Lista dos paises cadastrados ***");
             System.out.println("************************************\n");
             int i = 0;
-                for (Pais pais : paises) {
-                    System.out.println(i + " - " + pais);
-                    i++;
-                }
-                System.out.println(i + " - Cancelar operação");
+            for (Pais pais : paises) {
+                System.out.println(i + " - " + pais);
+                i++;
+            }
+            System.out.println(i + " - Cancelar operação");
 
-                System.out.print("Qual pais deseja remover?\n");
-                int opc = in.nextInt();
-                //Necessário para ler a quebra de linha (enter)
-                in.nextLine();
+            System.out.print("Qual pais deseja remover?\n");
+            int opc = in.nextInt();
+            //Necessário para ler a quebra de linha (enter)
+            in.nextLine();
 
-                if (opc==i) {
-                    // Cancelar operação
-                    break;
-                }
+            if (opc==i) {
+                // Cancelar operação
+                break;
+            }
 
-                if (opc >= paises.size() || opc < 0) {
-                    System.out.println("Esta opção não é válida");
+            if (opc >= paises.size() || opc < 0) {
+                System.out.println("Esta opção não é válida");
+            } else {
+                if (dao.deletepais(paises.get(opc))) {
+                    System.out.println("Falha ao tentar remover");
                 } else {
-                    if (dao.deletepais(paises.get(opc))) {
-                        System.out.println("Falha ao tentar remover");
-                    } else {
-                        System.out.println("Pais " + paises.get(opc).getNome() +
-                                " removido com sucesso");
-                    }
-                    //Isso para o while infinito
-                    break;
+                    System.out.println("Pais " + paises.get(opc).getNome() +
+                            " removido com sucesso");
                 }
-                for (Pais pais : paises) {
-                    System.out.println(pais);
-                }
+                //Isso para o while infinito
+                break;
+            }
+            for (Pais pais : paises) {
+                System.out.println(pais);
+            }
         }
-
     }
+
     private void createaplicativo(){
         Aplicativo app = new Aplicativo();
 
