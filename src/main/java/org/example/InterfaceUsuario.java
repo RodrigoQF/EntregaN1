@@ -147,6 +147,7 @@ public class InterfaceUsuario {
 
         System.out.println("*** Novo pais ***");
         System.out.print("\nInforme o nome do pais: ");
+        in.nextLine();
         paises.setNome(in.nextLine());
 
         System.out.print("Informe a populacao do pais: ");
@@ -356,6 +357,7 @@ public class InterfaceUsuario {
         System.out.println("*** Novo Computador***");
 
         System.out.print("\nInforme a marca do computador: ");
+        in.nextLine();
         comp.setMarca(in.nextLine());
 
         System.out.print("Informe o processador do computador: ");
