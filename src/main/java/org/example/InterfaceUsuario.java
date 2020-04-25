@@ -219,7 +219,7 @@ public class InterfaceUsuario {
             }
             System.out.println(i + " - Cancelar operação");
 
-            System.out.print("Qual pais deseja remover?\n");
+            System.out.print("Qual pais deseja remover? Escolha pela opção\n");
             int opc = in.nextInt();
             //Necessário para ler a quebra de linha (enter)
             in.nextLine();
@@ -253,6 +253,7 @@ public class InterfaceUsuario {
         System.out.println("*** Novo aplicativo***");
 
         System.out.print("\nInforme o nome do aplicativo: ");
+        in.nextLine();
         app.setNome(in.nextLine());
 
         System.out.print("Informe o desenvolvedor do aplicativo: ");
@@ -321,7 +322,7 @@ public class InterfaceUsuario {
             }
             System.out.println(i + " - Cancelar operação");
 
-            System.out.print("Qual aplicativo deseja remover?\n");
+            System.out.print("Qual aplicativo deseja remover? Escolha pela opção \n");
             int opc = in.nextInt();
             //Necessário para ler a quebra de linha (enter)
             in.nextLine();
@@ -425,7 +426,7 @@ public class InterfaceUsuario {
             }
             System.out.println(i + " - Cancelar operação");
 
-            System.out.print("Qual Computador deseja remover?\n");
+            System.out.print("Qual Computador deseja remover? Escolha pela opção\n");
             int opc = in.nextInt();
             //Necessário para ler a quebra de linha (enter)
             in.nextLine();
